@@ -23,7 +23,7 @@ const ProductDetails = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container py-5">
             <div className="row">
                 <div className="col-md-6">
                     <img src={product.image} className="card-img-top" alt=""/>
@@ -35,13 +35,13 @@ const ProductDetails = () => {
                         <span className="ml-2">${product.discountPrice}</span>
                     </div>
                     <div className="row py-3">
-                        <div className="col-md-5">
+                        <div className="col-md-5 d-flex justify-content-center pl-0">
                             <span className="dec" onClick={decriment}><BsDash /></span>
                             <span className="quantity">{quantity}</span>
                             <span className="inc" onClick={()=> setQuantity(quantity+1)}><BsPlus/></span>
                         </div>
                         <div className="col-md-7">
-                            <button className="btn btn-success btn-block" onClick={()=> dispatch({type: 'ADD_TO_CART', payload: {product, quantity}})}>ADD TO CART</button>
+                            <button className=" add-btn btn-block" onClick={()=> dispatch({type: 'ADD_TO_CART', payload: {product, quantity}})}>ADD TO CART</button>
                         </div>
                     </div>
                     <span>{product.description}</span>

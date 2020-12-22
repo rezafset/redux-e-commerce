@@ -1,9 +1,23 @@
-.dec{
-    cursor: pointer;
+.dec, .inc, .quantity {
+	width: 60px;
+	height: 40px;
+	border: 1px solid silver;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.inc{
-    cursor: pointer;
+.quantity {
+	border-left: none;
+    border-right: none;
 }
-.quantity{
-    
+.inc, .dec {
+	cursor: pointer;
+}
+
+.add-btn{
+    height: 40px;
+    border: none;
+    background-color: #FF5D5D;
+    color: #fff;
+    cursor: pointer;
 }

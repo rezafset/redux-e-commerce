@@ -6,25 +6,29 @@ import './Cart.css';
 
 const Cart = () => {
     const { products, totalPrice, totalQuantity } = useSelector(state => state.CartReducer);
+    const formatNumber = num => {
+        const number = Number(num.toFixed(2));
+        return number;
+    }
     // console.log(products);
     const dispatch = useDispatch();
     return (
-        <div className="container">
+        <div className="container py-5">
             <div className="row">
                 <div className="col-md-9">
-                    <div className="row">
+                    <div className="row header-row p-2">
                         <div className="col-md-2">Image</div>
                         <div className="col-md-2">Name</div>
                         <div className="col-md-2">Price</div>
-                        <div className="col-md-2">Quantity</div>
-                        <div className="col-md-2">Total Price</div>
-                        <div className="col-md-2">Remove</div>
+                        <div className="col-md-2 text-center">Quantity</div>
+                        <div className="col-md-2 text-center">Total Price</div>
+                        <div className="col-md-2 text-center">Remove</div>
                     </div>
                     {
-                        products.map( product =>
+                        products.map(product =>
                             <div className="row py-3" key={product.id}>
                                 <div className="col-md-2">
-                                    <img src={product.image}  className="cart-img" alt=""/>
+                                    <img src={product.image} className="cart-img" alt="" />
                                 </div>
                                 <div className="col-md-2">
                                     <span>{product.name}</span>
@@ -32,48 +36,48 @@ const Cart = () => {
                                 <div className="col-md-2">
                                     <span>{product.discountPrice}</span>
                                 </div>
-                                <div className="col-md-2">
-                                    <div className="d-flex justify-content-between">
-                                        <div className="">
-                                            <span className="dec" onClick={()=> dispatch({type: 'DEC', payload: product.id})}><BsDash /></span>
-                                        </div>
-                                        <div className="">
-                                            <span className="quantity">{product.quantity}</span>
-                                        </div>
-                                        <div className="">
-                                            <span className="inc" onClick={()=> dispatch({type: 'INC', payload: product.id})}><BsPlus/></span>
-                                        </div>
+                                <div className="col-md-2 d-flex justify-content-center pl-0">
+
+                                    <div className="">
+                                        <span className="dec-check" onClick={() => dispatch({ type: 'DEC', payload: product.id })}><BsDash /></span>
                                     </div>
+                                    <div className="">
+                                        <span className="quantity-check">{product.quantity}</span>
+                                    </div>
+                                    <div className="">
+                                        <span className="inc-check" onClick={() => dispatch({ type: 'INC', payload: product.id })}><BsPlus /></span>
+                                    </div>
+
                                 </div>
-                                <div className="col-md-2">
-                                    <span>{product.discountPrice * product.quantity}</span>
+                                <div className="col-md-2 d-flex justify-content-center">
+                                    <span>${formatNumber(product.discountPrice * product.quantity)}</span>
                                 </div>
-                                <div className="col-md-2">
-                                    <span onClick={()=> dispatch({type: 'DELETE', payload: product.id})}><AiFillDelete /></span>
+                                <div className="col-md-2 d-flex justify-content-center remove">
+                                    <span onClick={() => dispatch({ type: 'DELETE', payload: product.id })}><AiFillDelete /></span>
                                 </div>
                             </div>
                         )
                     }
                 </div>
-                <div className="col-md-3">
-                    <h6>Summary</h6>
-                    <div className="row">
+                <div className="col-md-3 header-summary">
+                    <h6 className="summary pb-2 text-center">Summary</h6>
+                    <div className="row py-2">
                         <div className="col-md-6">
                             <h6>Total Items:</h6>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 d-flex justify-content-end">
                             {totalQuantity}
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row pb-2">
                         <div className="col-md-6">
-                            <h6>Toatal:</h6>
+                            <h6>Total:</h6>
                         </div>
-                        <div className="col-md-6">
-                            {totalPrice}
+                        <div className="col-md-6 d-flex justify-content-end">
+                            ${formatNumber(totalPrice)}
                         </div>
                     </div>
-                    <button className="btn btn-success btn-block">Checkout</button>
+                    <button className="check-btn btn-block">Checkout</button>
                 </div>
             </div>
         </div>

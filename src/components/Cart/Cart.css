@@ -1,5 +1,43 @@
+.header-row{
+    /* background-color: #1AA3D0; */
+    font-weight: 600;
+}
+.summary{
+    /* background-color: #1AA3D0; */
+    font-weight: 600;
+}
 .cart-img{
     height: 70px;
     width: 90px;
     border-radius: 5px;
+}
+.check-btn{
+    height: 40px;
+    border: none;
+    background-color: #1AA3D0;
+    color: #fff;
+    cursor: pointer;
+}
+.summary{
+    border-bottom: 1px solid gray;
+}
+.remove{
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+.dec-check, .inc-check, .quantity-check {
+	width: 40px;
+	height: 27px;
+	border: 1px solid silver;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.quantity-check {
+	border-left: none;
+    border-right: none;
+}
+.dec-check, .inc-check {
+	cursor: pointer;
 }

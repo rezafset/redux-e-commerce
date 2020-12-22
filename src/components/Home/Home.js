@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div>
             <Header></Header>
-            <div className="container">
+            <div className="container py-5">
                 <div className="row">
                     {
                         products.map(product =>
@@ -28,7 +28,7 @@ const Home = () => {
                                         </div>
                                         {/* <p>{product.description}</p> */}
                                     </div>
-                                    <Link to={`/details/${product.id}`} style={{ textDecoration: 'none' }}><button className="btn btn-success btn-block">Product Details</button></Link>
+                                    <Link to={`/details/${product.id}`} style={{ textDecoration: 'none' }}><button className="detail-btn btn-block">Product Details</button></Link>
                                 </div>
                             </div>
                         )
