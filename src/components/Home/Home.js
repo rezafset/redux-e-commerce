@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Carousel from '../Carousel/Carousel';
 import Header from '../Header/Header';
 import './Home.css';
 
@@ -10,12 +11,14 @@ const Home = () => {
     return (
         <div>
             <Header></Header>
+            <Carousel></Carousel>
             <div className="container py-5">
+                <h1 className="text-center">Latest Product</h1>
                 <div className="row">
                     {
                         products.map(product =>
-                            <div className="col-md-3" key={product.id}>
-                                <div className="card">
+                            <div className="col-md-3 mt-4" key={product.id}>
+                                <div className="card shadow">
                                     <img src={product.image} alt="" className="card-img-top" />
                                     <div className="card-body">
                                         <h6 className="card-title">{product.name}</h6>

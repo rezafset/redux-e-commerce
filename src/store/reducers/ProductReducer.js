@@ -2,6 +2,11 @@ import img1 from '../../images/luisesquivel.jpg';
 import img2 from '../../images/iphone.jpg';
 import img3 from '../../images/blackshoe.jpg';
 import img4 from '../../images/headphone.jpg';
+import img5 from '../../images/redTshirt.jpg';
+import img6 from '../../images/camera.jpg';
+import img7 from '../../images/gold-zipper.jpg';
+import img8 from '../../images/watches.jpg';
+
 
 const initialState = {
     products : [
@@ -16,6 +21,18 @@ const initialState = {
         },
         {
             id: 4, name: 'Headphone',  image: img4, price: '40', discount: 3, discountPrice: 40 - 3/100 * 40, quantity: 1, description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, culpa. Vitae porro repudiandae eum esse!"
+        },
+        {
+            id: 5, name: 'T-Shirt',  image: img5, price: '50', discount: 4, discountPrice: 50 - 4/100 * 50, quantity: 1, description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, culpa. Vitae porro repudiandae eum esse!"
+        },
+        {
+            id: 6, name: 'Camera',  image: img6, price: '40', discount: 3, discountPrice: 40 - 3/100 * 40, quantity: 1, description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, culpa. Vitae porro repudiandae eum esse!"
+        },
+        {
+            id: 7, name: 'Ladies Bag',  image: img7, price: '50', discount: 4, discountPrice: 50 - 4/100 * 50, quantity: 1, description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, culpa. Vitae porro repudiandae eum esse!"
+        },
+        {
+            id: 8, name: 'Watch',  image: img8, price: '40', discount: 3, discountPrice: 40 - 3/100 * 40, quantity: 1, description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, culpa. Vitae porro repudiandae eum esse!"
         },
     ],
     product : {}
